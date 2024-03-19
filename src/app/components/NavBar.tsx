@@ -6,7 +6,7 @@ import { BsBag } from "react-icons/bs";
 
 export function TopBar(){
     return(
-        <div className='flex-between-center bg-secondary'>
+        <div className='flex-between-center bg-secondary px-10 py-3'>
             <SiJordan className='hidden md:block size-5' />
             <ul className='flex gap-3 text-xs'>
                 <li>Nike Jornal</li>|
@@ -19,7 +19,7 @@ export function TopBar(){
 }
 export function MediumBar(){
     return(
-        <div className='flex-between-center'>
+        <div className='flex-between-center px-10 py-3'>
             <SiNike className='size-14'/>
             <ul className='flex gap-3'>
                 <li>Lançamentos</li>
