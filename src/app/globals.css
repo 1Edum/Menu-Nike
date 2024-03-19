@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 
+*{
+    font-family: font-nike;
+}
+*/
+
+.flex-between-center{
+    @apply flex justify-between items-center
+}
+
