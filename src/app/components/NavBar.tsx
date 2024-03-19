@@ -29,13 +29,13 @@ export function MediumBar(){
                 <li>infantil</li>
                 <li>SNKRS</li>
             </ul>
-            <div className='flex'>
+            <div className='flex-between-center gap-3'>
                 <div className='relative flex items-center'>
-                <CiSearch className='absolute'/>
-                <input type="text" placeholder='Buscar' className='bg-secondary' />
+                <CiSearch className='absolute ml-1'/>
+                <input type="text" placeholder='Buscar' className='bg-secondary rounded-xl w-40 py-2 pl-6' />
                 </div>
-                <CiHeart />
-                <BsBag />
+                <CiHeart className='size-6'/>
+                <BsBag className='size-5'/>
             </div>
         </div>
     )
