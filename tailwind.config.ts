@@ -12,6 +12,9 @@ const config: Config = {
         primary: '#000000',
         secondary: '#F7F7F7',
       },
+      fontFamily: {
+        'nike': ['Futura Bold Condensed', 'sans-serif'],
+      },
     },
   },
   plugins: [],
