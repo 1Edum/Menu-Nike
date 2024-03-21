@@ -3,8 +3,9 @@
 import React, {useState} from 'react';
 import { Close, Open, LinksTop, Links } from './Menu'; // Certifique-se de importar os ícones corretamente
 import { SiNike, SiJordan } from "react-icons/si";
-import { CiSearch, CiHeart } from "react-icons/ci";
+import { CiHeart } from "react-icons/ci";
 import { BsBag } from "react-icons/bs";
+import Shearch from './Shearch';
 
 
 export function TopBar(){
@@ -31,13 +32,7 @@ export function MediumBar({
   return (
     <div className='flex-between-center px-10 py-3'>
       <SiNike className='size-14' />
-      <div className='flex-between-center gap-3'>
-        <div className='relative flex items-center'>
-          <CiSearch className='absolute ml-1' />
-          <input type="text" placeholder='Buscar' className='md:bg-secondary rounded-xl w-40 py-2 pl-6' />
-        </div>
         {children}
-      </div>
     </div>
   );
 }
@@ -65,9 +60,9 @@ export default function NavBar() {
             */}
         <MediumBar>
           <div>
-            <ul className={`md:flex items-center absolute md:static  z-50 w-full transition-all duration-500 ease-in ${open ? '' : 'hidden'}`}>
-              <li  className={`md:hidden ${open ? '' : 'hidden'}`}>
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <ul className={`flex flex-col md:flex-row gap-11 md:text-base md text-2xl absolute md:static bg-white  h-full md:pt-0 md-px-8 top-0 pt-6 px-8  w-1/2 mt-14 z-50 transition-all duration-500 ease-in ${open ? '' : 'hidden'}`}>
+              <li className={`md:hidden ${open ? '' : 'hidden'}`}>
+                <button className="bg-black text-white py-3 text-base px-6 rounded-3xl">
                   Entrar
                 </button>
               </li>
@@ -78,13 +73,14 @@ export default function NavBar() {
               ))}
             </ul>
           </div>
-          <div>
-          </div>
+          <div className='flex-between-center gap-3'>
+            <Shearch />
             <CiHeart className='size-6' />
             <BsBag className='size-5' />
-            <div onClick={toggleMenu} className='md:hidden'>
+              <div onClick={toggleMenu} className='md:hidden'>
               {open ? <Close /> : <Open />}
-            </div>
+              </div>
+          </div>
         </MediumBar>
       </nav>
     </header>
