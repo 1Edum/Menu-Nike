@@ -1,6 +1,3 @@
-import React, { useState } from 'react'
-
-
 export function Open() {
   return (
     <div className='flex flex-col gap-[2px]'>
