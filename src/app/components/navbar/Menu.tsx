@@ -20,10 +20,10 @@ export const LinksTop =[
 
 export function Open() {
   return (
-    <div className='flex flex-col gap-[4px]'>
-      <div className='w-4 h-[2px] rounded-md bg-primary'></div>
-      <div className='w-4 h-[2px] rounded-md bg-primary'></div>
-      <div className='w-4 h-[2px] rounded-md bg-primary'></div>
+    <div className='flex flex-col gap-[6px]'>
+      <div className='w-5 h-[2px] rounded-md bg-primary'></div>
+      <div className='w-5 h-[2px] rounded-md bg-primary'></div>
+      <div className='w-5 h-[2px] rounded-md bg-primary'></div>
     </div>
   )
 }
