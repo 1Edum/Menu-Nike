@@ -14,12 +14,12 @@ export function TopBar(){
     <div className='flex-between-center md:bg-secondary md:px-10 md:py-3'>
       <SiJordan className='hidden md:block size-5' />
       <ul className='hidden md:flex items-center gap-3 text-sm'>
-            {LinksTop.map((link) =>(
-              <li key={link.name}>
-                <a href={link.name}>{link.name}</a>
-              </li>
-            ))}
-          </ul>
+        {LinksTop.map((link) =>(
+          <li key={link.name}>
+            <a href={link.name}>{link.name}</a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
@@ -30,8 +30,8 @@ export function MediumBar({
   children: React.ReactNode;
 }>) {
   return (
-    <div className='flex-between-center px-10 py-3'>
-      <SiNike className='size-14' />
+    <div className='flex-between-center md:px-10 px-4 py-1 md:py-3'>
+      <SiNike className='size-10 md:size-14' />
         {children}
     </div>
   );
@@ -42,25 +42,15 @@ export default function NavBar() {
 
   const toggleMenu = () => {
     setOpen(!open);
-    console.log("Menu hamburguer clicado!"); // Adicionando console.log quando o menu hamburguer é clicado
   };
 
   return (
     <header>
       <nav>
         <TopBar />
-          {/*
-            <ul className={`md:flex items-center absolute md:static  z-50 w-full transition-all duration-500 ease-in ${open ? '' : 'hidden'}`}>
-              {Links.map((link) => (
-                <li key={link.name}>
-                  <a href={link.link} className='hover:text-primary/60 duration-300'>{link.name}</a>
-                </li>
-              ))}
-            </ul>
-            */}
         <MediumBar>
           <div>
-            <ul className={`flex flex-col md:flex-row gap-11 md:text-base md text-2xl absolute md:static bg-white  h-full md:pt-0 md-px-8 top-0 pt-6 px-8  w-1/2 mt-14 z-50 transition-all duration-500 ease-in ${open ? '' : 'hidden'}`}>
+            <ul className={`flex flex-col md:flex-row gap-11 md:text-base text-2xl absolute md:static bg-white h-full md:pt-0 md-px-8 top-10 pt-6 px-8 w-1/2 right-2  z-50 transition-all duration-500 ease-in ${open ? '' : 'hidden'}`}>
               <li className={`md:hidden ${open ? '' : 'hidden'}`}>
                 <button className="bg-black text-white py-3 text-base px-6 rounded-3xl">
                   Entrar
@@ -73,8 +63,19 @@ export default function NavBar() {
               ))}
             </ul>
           </div>
-          <div className='flex-between-center gap-3'>
-            <Shearch />
+          <div >
+            <ul className='md:flex gap-8 hidden'>
+              {Links.map((link) => (
+                <li key={link.name}>
+                  <a href={link.link} className='hover:text-primary/60 duration-300'>{link.name}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className='flex-between-center gap-8'>
+            <div className='hidden md:flex'>
+              <Shearch />
+            </div>
             <CiHeart className='size-6' />
             <BsBag className='size-5' />
               <div onClick={toggleMenu} className='md:hidden'>
@@ -82,6 +83,9 @@ export default function NavBar() {
               </div>
           </div>
         </MediumBar>
+        <div className='flex md:hidden px-4 w-full'>
+          <Shearch />
+        </div>
       </nav>
     </header>
   );
