@@ -1,13 +1,19 @@
-import React from 'react'
-import { CiSearch} from "react-icons/ci";
+import React from "react";
+import { CiSearch } from "react-icons/ci";
 
 function Shearch() {
   return (
-    <div className='relative md:flex items-center hidden'>
-          <CiSearch className='absolute ml-1' />
-          <input type="text" placeholder='Buscar' className='md:bg-secondary rounded-xl w-40 py-2 pl-6' />
+    <div>
+      <div className="relative flex items-center">
+        <CiSearch className="absolute ml-2" />
+        <input
+          type="text"
+          placeholder="Buscar"
+          className="bg-secondary rounded-3xl md:w-44 w-[350px] py-2 pl-10 "
+        />
+      </div>
     </div>
-  )
+  );
 }
 
-export default Shearch
+export default Shearch;
